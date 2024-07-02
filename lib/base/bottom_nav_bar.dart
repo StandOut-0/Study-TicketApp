@@ -13,10 +13,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My tickets"),
+        title: const Text("My tickets"),
       ),
-      body: Center(
+      body: const Center(
         child: Text("Ticket Info"),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
+        ],
       ),
     );
   }
