@@ -1,49 +1,8 @@
 import 'package:flutter/material.dart';
 
 void main() {
-
-  var car = Car(4);
-  car.carType();
-  car.wheelsNum();
-
-  var plane = Plane(3);
-  plane.wheelsNum();
-  // print("Hello sanghee");
-  // runApp(const MyApp());
+  runApp(const MyApp());
 }
-
-abstract class Vehicle{
-  Vehicle(this.wheels);
-  int wheels;
-  void wheelsNum();
-}
-
-class Car extends Vehicle{
-  Car(super.wheels);
-
-  void carType(){
-    print("land runner");
-  }
-  @override
-  void wheelsNum(){
-    print("The car's wheels number id $wheels");
-  }
-
-}
-
-class Plane extends Vehicle{
-  Plane(super.wheels);
-
-  void planeType(){
-    print("land runner");
-  }
-  @override
-  void wheelsNum(){
-    print("The plane's wheels number id $wheels");
-  }
-
-}
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -77,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-                                    _counter++;
+      print("The change values is $_counter");
+      _counter++;
     });
   }
 
