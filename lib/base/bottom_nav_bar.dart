@@ -1,11 +1,13 @@
-class  extends StatefulWidget {
-  const ({super.key});
+import 'package:flutter/cupertino.dart';
+
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
 
   @override
-  State<> createState() => _State();
+  State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _State extends State<> {
+class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
