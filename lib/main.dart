@@ -6,6 +6,8 @@ void main() {
   car.carType();
   car.wheelsNum();
 
+  var plane = Plane(3);
+  plane.wheelsNum();
   // print("Hello sanghee");
   // runApp(const MyApp());
 }
@@ -24,7 +26,20 @@ class Car extends Vehicle{
   }
   @override
   void wheelsNum(){
-    print("The cat's wheels number id $wheels");
+    print("The car's wheels number id $wheels");
+  }
+
+}
+
+class Plane extends Vehicle{
+  Plane(super.wheels);
+
+  void planeType(){
+    print("land runner");
+  }
+  @override
+  void wheelsNum(){
+    print("The plane's wheels number id $wheels");
   }
 
 }
