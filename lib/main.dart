@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
 
-  var car = Car();
+  var car = Car(4);
   car.carType();
   car.wheelsNum();
 
@@ -11,11 +11,13 @@ void main() {
 }
 
 abstract class Vehicle{
-int wheels = 10;
-void wheelsNum();
+  Vehicle(this.wheels);
+  int wheels;
+  void wheelsNum();
 }
 
 class Car extends Vehicle{
+  Car(super.wheels);
 
   void carType(){
     print("land runner");
