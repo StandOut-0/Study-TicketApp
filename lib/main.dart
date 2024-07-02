@@ -37,20 +37,24 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
-      print("The change values is $_counter");
+    });
+  }
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-                            return Scaffold(
+    return Scaffold(
       appBar: AppBar(
-                                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-                        title: Text(widget.title),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
       body: Center(
-                        child: Column(
-                                                                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
@@ -62,10 +66,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),     );
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: _decrementCounter,
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          )
+        ],
+      ),
+    );
   }
 }
