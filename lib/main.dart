@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+        ),
         body: Center(child: Text("Hello Sanghee"),),
       ),
     );
