@@ -36,8 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      print("The change values is $_counter");
       _counter++;
+      print("The change values is $_counter");
     });
   }
 
