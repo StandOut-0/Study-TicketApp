@@ -19,11 +19,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: Text("Ticket Info"),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.blueGrey,
+        unselectedItemColor: const Color(0xFF526400),
+        showSelectedLabels: false,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.airplane_ticket), label: "Tickets"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
         ],
       ),
     );
   }
 }
+
