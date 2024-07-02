@@ -15,6 +15,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
       appBar: AppBar(
         title: Text("My tickets"),
       ),
+      body: Center(
+        child: Text("Ticket Info"),
+      ),
     );
   }
 }
