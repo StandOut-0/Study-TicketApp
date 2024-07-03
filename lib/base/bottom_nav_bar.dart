@@ -29,7 +29,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My tickets"),
+        title: Center(child: const Text("My tickets")),
       ),
       body: Center(child: appScreens[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
