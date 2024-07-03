@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/media.dart';
 
 import '../res/style/app_styles.dart';
 
@@ -38,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                            image: AssetImage("assets/images/logo.png")
+                            image: AssetImage(AppMedia.logo)
                           )
                         ),
                       )
