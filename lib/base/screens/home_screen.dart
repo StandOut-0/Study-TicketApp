@@ -17,6 +17,7 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Good morning"),
                           Text("Book Tickets")
