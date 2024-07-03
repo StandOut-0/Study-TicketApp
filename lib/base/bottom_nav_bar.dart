@@ -1,5 +1,4 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -11,16 +10,29 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
 
+  final appScreens = [
+    Text("Home"),
+    Text("Search"),
+    Text("Ticket"),
+    Text("Profile")
+  ];
+
+  var _selectedIndex = 0;
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("My tickets"),
       ),
-      body: const Center(
-        child: Text("Ticket Info"),
-      ),
+      body: Center(child: appScreens[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: _onItemTapped,
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: const Color(0xFF526400),
         showSelectedLabels: false,
@@ -36,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               label: "Ticket"),
           BottomNavigationBarItem(icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_person_accounts_filled),
-              label: "Profile"),
+              label: "Profile")
         ],
       ),
     );
