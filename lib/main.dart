@@ -5,8 +5,10 @@ void main() {
   runApp(const MyApp());
   var test = TestClass(x: 4, y: 10);
   print(test.x);
-  var newTest = test.copyWith(30, 40);
+  var newTest = test.copyWith(x:30);
   print(test.y);
+  var newTest2 = test.copyWith(y:100);
+  print(newTest2.x);
 }
 
 class TestClass{
@@ -14,7 +16,7 @@ class TestClass{
   int y;
 
   TestClass({required this.x, required this.y});
-  TestClass copyWith(int? x, int? y){
+  TestClass copyWith({int? x, int? y}){
   return TestClass(x:x??this.x, y:y??this.y);
   }
 }
