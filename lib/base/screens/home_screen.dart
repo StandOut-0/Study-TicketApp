@@ -49,7 +49,6 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-
                   const SizedBox(height: 25),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
@@ -64,12 +63,12 @@ class HomeScreen extends StatelessWidget {
                         Text("Search")
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 40),
+                  const AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all'),
                 ],
               ),
             ),
-            const SizedBox(height: 40),
-            AppDoubleText(),
           ]
       ),
     );
