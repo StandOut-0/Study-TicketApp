@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const BottomNavBar(),
+      // home: const BottomNavBar(),
       routes: {
-        "all_tickets":(context) => const AllTickets()
+        "/": (context) => const BottomNavBar(),
+        "/all_tickets":(context) => const AllTickets()
       },
     );
   }
