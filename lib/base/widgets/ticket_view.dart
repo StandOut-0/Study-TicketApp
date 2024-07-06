@@ -62,14 +62,21 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("New-York",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                      SizedBox(
+                        width:100,
+                        child: Text("New-York",
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
+                      ),
                       Expanded(child: Container()),
                       Text("8H 30M",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                        style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
                       Expanded(child: Container()),
-                      Text("London",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),)
+                      SizedBox(
+                        width:100,
+                        child: Text("London",
+                          textAlign: TextAlign.end,
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
+                      )
                     ],
                   )
                 ],
@@ -100,42 +107,42 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("NYC",
+                      SizedBox(
+                        width:100,
+                        child: Text("1 May",
+                          style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                      ),
+                      Expanded(child: Container()),
+                      Text("08:00 AM",
                         style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
                       Expanded(child: Container()),
-                      const BigDot(),
-                      Expanded(child: Stack(
-                        children: [
-                          const SizedBox(
-                            height: 24,
-                            child: AppLayoutBuilderWidget(randomDivider: 6),
-                          ),
-                          Center(
-                              child: Transform.rotate(angle: 1.5,
-                                  child: const Icon(Icons.local_airport_rounded, color: Colors.white
-                                  )
-                              )
-                          )
-                        ],
-                      )),
-                      const BigDot(),
-                      Expanded(child: Container()),
-                      Text("LDN",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),)
+                      SizedBox(
+                        width:100,
+                        child: Text("23",
+                          textAlign: TextAlign.end,
+                          style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                      )
                     ],
                   ),
                   const SizedBox(height: 3),
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("New-York",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                      SizedBox(
+                        width:100,
+                        child: Text("Date",
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
+                      ),
                       Expanded(child: Container()),
-                      Text("8H 30M",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                      Text("Departure time",
+                        style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
                       Expanded(child: Container()),
-                      Text("London",
-                        style: AppStyles.headLineStyle3.copyWith(color: Colors.white),)
+                      SizedBox(
+                        width:100,
+                        child: Text("Number",
+                          textAlign: TextAlign.end,
+                          style: AppStyles.headLineStyle4.copyWith(color: Colors.white),),
+                      )
                     ],
                   )
                 ],
