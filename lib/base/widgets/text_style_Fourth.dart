@@ -16,6 +16,6 @@ class TextStyleFourth extends StatelessWidget {
       textAlign: align,
       style: isColor == null
           ? AppStyles.headLineStyle4.copyWith(color: Colors.white)
-        :AppStyles.headLineStyle4);
+        :AppStyles.headLineStyle4.copyWith(color: AppStyles.greyColor));
   }
 }

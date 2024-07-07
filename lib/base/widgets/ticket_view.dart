@@ -115,15 +115,15 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width:100,
-                        child: TextStyleThird(text: ticket['date'])
+                        child: TextStyleThird(text: ticket['date'], isColor: isColor)
                       ),
                       Expanded(child: Container()),
-                      TextStyleThird(text: ticket['departure_time']),
+                      TextStyleThird(text: ticket['departure_time'], isColor: isColor),
                       Expanded(child: Container()),
                       SizedBox(
                         width:100,
                         child:
-                        TextStyleThird(text: ticket['number'].toString(), align: TextAlign.end),
+                        TextStyleThird(text: ticket['number'].toString(), isColor: isColor, align: TextAlign.end),
 
                       )
                     ],
@@ -135,14 +135,14 @@ class TicketView extends StatelessWidget {
                       SizedBox(
                         width:100,
                         child:
-                        TextStyleFourth(text:'Date'),
+                        TextStyleFourth(text:'Date', isColor: isColor),
                       ),
                       Expanded(child: Container()),
-                      TextStyleFourth(text:'Departure time'),
+                      TextStyleFourth(text:'Departure time', isColor: isColor),
                       Expanded(child: Container()),
                       SizedBox(
                         width:100,
-                        child: TextStyleFourth(text:'Number', align: TextAlign.end,),
+                        child: TextStyleFourth(text:'Number', align: TextAlign.end, isColor: isColor),
                       )
                     ],
                   )
