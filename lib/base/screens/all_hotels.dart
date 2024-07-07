@@ -21,7 +21,7 @@ class AllHotels extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing:16.0,
                 mainAxisSpacing: 16.0,
-                childAspectRatio: 1.0
+                childAspectRatio: 0.9
             ),
             itemCount: hotelList.length,
             itemBuilder: (context, index){
@@ -46,7 +46,7 @@ class HotelGridView extends StatelessWidget {
     return Container(
       margin: wholeScreen == true?EdgeInsets.only(left:16, right:16):EdgeInsets.only(right: 16) ,
       padding: EdgeInsets.all(8.0),
-      width: size.width* (wholeScreen == true?1:0.6),
+      // width: size.width* (wholeScreen == true?1:0.6),
       height: 350,
       decoration: BoxDecoration(
           color: AppStyles.primaryColor,
@@ -56,18 +56,21 @@ class HotelGridView extends StatelessWidget {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              height: 180,
-              decoration: BoxDecoration(
-                  color: AppStyles.primaryColor,
-                  borderRadius: BorderRadius.circular(18),
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                          "assets/images/${hotel['image']}"
-                      )
-                  )
-              )
+          AspectRatio(
+            aspectRatio: 1.2,
+            child: Container(
+                // height: 180,
+                decoration: BoxDecoration(
+                    color: AppStyles.primaryColor,
+                    borderRadius: BorderRadius.circular(18),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                            "assets/images/${hotel['image']}"
+                        )
+                    )
+                )
+            ),
           ),
           SizedBox(height: 10),
           Padding(
