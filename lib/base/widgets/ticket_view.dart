@@ -90,11 +90,11 @@ class TicketView extends StatelessWidget {
               color: isColor==null?AppStyles.ticketOrange:AppStyles.ticktWhite,
               child: Row(
                 children: [
-                  BigCircle(isRight: false),
+                  BigCircle(isRight: false, isColor: isColor),
                   Expanded(child: AppLayoutBuilderWidget(randomDivider: 16,
                     width: 6,
                   isColor: isColor)),
-                  BigCircle(isRight: true)
+                  BigCircle(isRight: true, isColor: isColor)
                 ],
               )
             ),
