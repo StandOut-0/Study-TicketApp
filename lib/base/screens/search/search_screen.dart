@@ -37,8 +37,10 @@ class SearchScreen extends StatelessWidget {
             func: () => Navigator.pushNamed(context, "/all_tickets") ,),
           SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                height: 400,
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 width: size.width*.42,
                 decoration: BoxDecoration(
@@ -71,6 +73,35 @@ class SearchScreen extends StatelessWidget {
                     style: AppStyles.headLineStyle2,)
                   ],
                 ),
+              ),
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    width: size.width*.44,
+                    height: 220,
+                    decoration: BoxDecoration(
+                      color: Color(0xff3a88b8),
+                      borderRadius: BorderRadius.circular(18)
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Discount\nfor survey",
+                        style: AppStyles.headLineStyle2.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white)
+                        ),
+                        SizedBox(height: 10),
+                        Text("Take the survey about out service and get discount",
+                            style: AppStyles.headLineStyle2.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)
+                        )
+                      ],
+                    ),
+                  )
+                ],
               )
             ],
           )
