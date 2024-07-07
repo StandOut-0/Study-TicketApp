@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
+import 'package:ticket_app/base/screens/search/widgets/app_ticket_tabs.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -14,7 +15,9 @@ class SearchScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 40,),
           Text("What are\nyou looking fot?",
-            style: AppStyles.headLineStyle1.copyWith(fontSize: 35),)
+            style: AppStyles.headLineStyle1.copyWith(fontSize: 35),),
+          const SizedBox(height: 20,),
+          AppTicketTabs()
         ],
       )
     );
