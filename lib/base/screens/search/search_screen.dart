@@ -76,31 +76,48 @@ class SearchScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                    width: size.width*.44,
-                    height: 220,
-                    decoration: BoxDecoration(
-                      color: Color(0xff3a88b8),
-                      borderRadius: BorderRadius.circular(18)
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Discount\nfor survey",
-                        style: AppStyles.headLineStyle2.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white)
-                        ),
-                        SizedBox(height: 10),
-                        Text("Take the survey about out service and get discount",
-                            style: AppStyles.headLineStyle2.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white)
-                        )
-                      ],
-                    ),
-                  )
+                 Stack(
+                   children: [
+                     Container(
+                       padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                       width: size.width*.44,
+                       height: 220,
+                       decoration: BoxDecoration(
+                           color: Color(0xff3a88b8),
+                           borderRadius: BorderRadius.circular(18)
+                       ),
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text("Discount\nfor survey",
+                               style: AppStyles.headLineStyle2.copyWith(
+                                   fontWeight: FontWeight.bold,
+                                   color: Colors.white)
+                           ),
+                           SizedBox(height: 10),
+                           Text("Take the survey about out service and get discount",
+                               style: AppStyles.headLineStyle2.copyWith(
+                                   fontWeight: FontWeight.bold,
+                                   color: Colors.white)
+                           )
+                         ],
+                       ),
+                     ),
+                     Positioned(
+                         right: -45,
+                         top: -40,
+                         child: Container(
+                       padding: EdgeInsets.all(30),
+                       decoration: BoxDecoration(
+                           shape: BoxShape.circle,
+                           border: Border.all(
+                               width: 18,
+                               color: Color(0xff31698a)
+                           )
+                       ),
+                     ))
+                   ],
+                 )
                 ],
               )
             ],
