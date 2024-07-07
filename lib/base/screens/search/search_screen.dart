@@ -65,7 +65,10 @@ class SearchScreen extends StatelessWidget {
                           )
                         )
                       ),
-                    )
+                    ),
+                    SizedBox(height: 12),
+                    Text("20% discount on the early bookng of this flight, Dont miss!",
+                    style: AppStyles.headLineStyle2,)
                   ],
                 ),
               )
