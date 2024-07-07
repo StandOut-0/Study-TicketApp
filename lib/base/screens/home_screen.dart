@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,8 +83,21 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 40),
                   AppDoubleText(bigText: 'Hotels', smallText: 'View all',
                   func: () => Navigator.pushNamed(context, "/all_tickets")  ,),
-
-                  Hotel()
+                  const SizedBox(height: 20),
+                  SingleChildScrollView(
+                      scrollDirection:  Axis.horizontal,
+                      child: Row(
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            Hotel(),
+                            Hotel(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ))
                 ],
               ),
             ),

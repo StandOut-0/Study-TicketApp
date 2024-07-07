@@ -11,6 +11,8 @@ class Hotel extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
+      margin: EdgeInsets.only(right: 16),
+      padding: EdgeInsets.all(8.0),
       width: size.width*0.6,
       height: 350,
       decoration: BoxDecoration(
@@ -19,12 +21,13 @@ class Hotel extends StatelessWidget {
       ),
       child:
       Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 180,
             decoration: BoxDecoration(
                 color: AppStyles.primaryColor,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
                   fit: BoxFit.cover,
                     image: AssetImage(
@@ -33,7 +36,26 @@ class Hotel extends StatelessWidget {
                 )
                 )
             ),
-
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text("Open space", style: AppStyles.headLineStyle1.copyWith(
+              color: AppStyles.kakiColor
+            ),),
+          ), SizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text("London", style: AppStyles.headLineStyle3.copyWith(
+                color: Colors.white
+            ),),
+          ),
+          SizedBox(height: 5),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text("\$25/nights", style: AppStyles.headLineStyle1.copyWith(
+                color: AppStyles.kakiColor
+            ),),
+          )
         ],
       ),
     );
