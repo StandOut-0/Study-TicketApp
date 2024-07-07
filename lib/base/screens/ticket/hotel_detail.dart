@@ -1,9 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
+import 'package:ticket_app/base/utils/all_json.dart';
 
-class HotelDetail extends StatelessWidget {
+class HotelDetail extends StatefulWidget {
   const HotelDetail({super.key});
+
+  @override
+  State<HotelDetail> createState() => _HotelDetailState();
+}
+
+class _HotelDetailState extends State<HotelDetail> {
+  late int index;
+
+  @override
+  void didChangeDependencies() {
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    index = args["index"];
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +29,24 @@ class HotelDetail extends StatelessWidget {
             expandedHeight: 300,
             // floating: false,
             pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text("Hotel title"),
-              background: Image.network(
-                "https://via.placeholder.com/600x400"
+            leading: GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppStyles.primaryColor
+                ),
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
               ),
+            ),
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(hotelList[index]["place"]),
+              background: Image.asset("assets/images/${hotelList[index]["image"]}"),
             ),
           ),
           SliverList(delegate: SliverChildListDelegate(
