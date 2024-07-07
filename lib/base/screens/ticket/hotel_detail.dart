@@ -29,24 +29,39 @@ class _HotelDetailState extends State<HotelDetail> {
             expandedHeight: 300,
             // floating: false,
             pinned: true,
-            leading: GestureDetector(
-              onTap: (){
-                Navigator.pop(context);
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppStyles.primaryColor
-                ),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
+            leading: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppStyles.primaryColor
+                  ),
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(hotelList[index]["place"]),
-              background: Image.asset("assets/images/${hotelList[index]["image"]}"),
+
+              background: Stack(
+                children: [
+                  Positioned.fill(child: Image.asset("assets/images/${hotelList[index]["image"]}",
+                    fit: BoxFit.cover,),),
+                  Positioned(
+                    bottom: 20,
+                    right: 20,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal:8, vertical: 4 ),
+                        color: Colors.black.withOpacity(.5),
+                        child: Text(hotelList[index]["place"], style: AppStyles.textStyle.copyWith(color: Colors.white),)),)
+                ],
+              )
             ),
           ),
           SliverList(delegate: SliverChildListDelegate(
