@@ -13,19 +13,22 @@ class AllHotels extends StatelessWidget {
       appBar: AppBar(
           title: const Text("All Hotels")
       ),
-      body: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-            crossAxisSpacing:16.0,
-            mainAxisSpacing: 16.0,
-            childAspectRatio: 1.0
-
-          ),
-          itemBuilder: (context, index){
-            return Container(
-              child: Text("grid"),
-            );
-          }
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+              crossAxisSpacing:16.0,
+              mainAxisSpacing: 16.0,
+              childAspectRatio: 1.0
+            ),
+            itemCount: hotelList.length,
+            itemBuilder: (context, index){
+              return Container(
+                child: Text("grid"),
+              );
+            }
+        ),
       )
       );
   }
