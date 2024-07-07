@@ -75,22 +75,28 @@ class HotelGridView extends StatelessWidget {
           SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 15),
-            child: Text(hotel['place'], style: AppStyles.headLineStyle1.copyWith(
+            child: Text(hotel['place'], style: AppStyles.headLineStyle2.copyWith(
                 color: AppStyles.kakiColor
-            ),),
-          ), SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(hotel['destination'], style: AppStyles.headLineStyle3.copyWith(
-                color: Colors.white
             ),),
           ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text("\$${hotel['price']}/nights", style: AppStyles.headLineStyle1.copyWith(
-                color: AppStyles.kakiColor
-            ),),
+          // SizedBox(height: 5),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Text(hotel['destination'],
+                  style: AppStyles.headLineStyle3.copyWith(
+                      color: Colors.white
+                  ),),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Text("\$${hotel['price']}/nights",
+                  style: AppStyles.headLineStyle4.copyWith(
+                      color: AppStyles.kakiColor
+                  ),),
+              )
+            ],
           )
         ],
       ),
