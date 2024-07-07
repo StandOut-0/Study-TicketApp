@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/style/app_styles.dart';
 
 class AppLayoutBuilderWidget extends StatelessWidget {
   final int randomDivider;
   final double width;
-  const AppLayoutBuilderWidget({super.key, required this.randomDivider, this.width =3});
+  final bool? isColor;
+  const AppLayoutBuilderWidget({super.key, required this.randomDivider,
+    this.width =3, this.isColor = null});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,9 @@ class AppLayoutBuilderWidget extends StatelessWidget {
             children: List.generate(
                 (constraints.constrainWidth() / randomDivider).floor(),
                     (index) => SizedBox(
-                      width: width, height: 1,child: const DecoratedBox(
+                      width: width, height: 1,child:  DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Colors.white
+                        color: isColor == null ? Colors.white: AppStyles.isColorTrueLightBlue
                       ),
                     ),
                     )),

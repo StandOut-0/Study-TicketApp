@@ -12,7 +12,9 @@ import 'big_circle.dart';
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
   final bool wholeScreen;
-  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
+  final bool? isColor;
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false,
+    this.isColor = null});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class TicketView extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  color: AppStyles.ticketBlue,
+                  color: isColor==null? AppStyles.ticketBlue:AppStyles.ticktWhite,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(21),
                     topRight: Radius.circular(21)
@@ -38,26 +40,27 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextStyleThird(text: ticket["from"]["code"]),
+                      TextStyleThird(text: ticket["from"]["code"], isColor: isColor),
                       Expanded(child: Container()),
-                      const BigDot(),
+                      BigDot(isColor: isColor),
                       Expanded(child: Stack(
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 24,
-                            child: AppLayoutBuilderWidget(randomDivider: 6),
+                            child: AppLayoutBuilderWidget(randomDivider: 6, isColor: isColor),
                           ),
                           Center(
                               child: Transform.rotate(angle: 1.5,
-                              child: const Icon(Icons.local_airport_rounded, color: Colors.white
+                              child: Icon(Icons.local_airport_rounded, color: isColor == null?
+                              Colors.white: AppStyles.isColorTrueLightBlue
                               )
                               )
                           )
                         ],
                       )),
-                      const BigDot(),
+                      BigDot(isColor: isColor),
                       Expanded(child: Container()),
-                      TextStyleThird(text: ticket["to"]["code"]),
+                      TextStyleThird(text: ticket["to"]["code"], isColor: isColor),
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -66,15 +69,16 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width:100,
-                        child:TextStyleFourth(text: ticket["from"]["name"]),
+                        child:TextStyleFourth(text: ticket["from"]["name"], isColor: isColor),
                       ),
                       Expanded(child: Container()),
-                      TextStyleFourth(text: ticket['flying_time']),
+                      TextStyleFourth(text: ticket['flying_time'], isColor: isColor),
                       Expanded(child: Container()),
                       SizedBox(
                         width:100,
                         child: TextStyleFourth(text: ticket["to"]["name"],
-                            align: TextAlign.end),
+                            align: TextAlign.end
+                            , isColor: isColor),
                       )
                     ],
                   )
@@ -83,11 +87,13 @@ class TicketView extends StatelessWidget {
             ),
             Container(
               height: 20,
-              color: AppStyles.ticketOrange,
-              child: const Row(
+              color: isColor==null?AppStyles.ticketOrange:AppStyles.ticktWhite,
+              child: Row(
                 children: [
                   BigCircle(isRight: false),
-                  Expanded(child: AppLayoutBuilderWidget(randomDivider: 16, width: 6,)),
+                  Expanded(child: AppLayoutBuilderWidget(randomDivider: 16,
+                    width: 6,
+                  isColor: isColor)),
                   BigCircle(isRight: true)
                 ],
               )
