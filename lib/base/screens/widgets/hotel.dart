@@ -4,16 +4,18 @@ import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 
 class Hotel extends StatelessWidget {
-  const Hotel({super.key});
+  final Map<String, dynamic> hotel;
+  final bool wholeScreen;
+  const Hotel({super.key, required this.hotel, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      margin: EdgeInsets.only(right: 16),
+      margin: wholeScreen == true?EdgeInsets.only(left:16, right:16):EdgeInsets.only(right: 16) ,
       padding: EdgeInsets.all(8.0),
-      width: size.width*0.6,
+      width: size.width* (wholeScreen == true?1:0.6),
       height: 350,
       decoration: BoxDecoration(
           color: AppStyles.primaryColor,
@@ -31,7 +33,7 @@ class Hotel extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                     image: AssetImage(
-                        AppMedia.hotelRoom
+                        "assets/images/${hotel['image']}"
                     )
                 )
                 )
@@ -39,20 +41,20 @@ class Hotel extends StatelessWidget {
           SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.only(left: 15),
-            child: Text("Open space", style: AppStyles.headLineStyle1.copyWith(
+            child: Text(hotel['place'], style: AppStyles.headLineStyle1.copyWith(
               color: AppStyles.kakiColor
             ),),
           ), SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 15),
-            child: Text("London", style: AppStyles.headLineStyle3.copyWith(
+            child: Text(hotel['destination'], style: AppStyles.headLineStyle3.copyWith(
                 color: Colors.white
             ),),
           ),
           SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 15),
-            child: Text("\$25/nights", style: AppStyles.headLineStyle1.copyWith(
+            child: Text("\$${hotel['price']}/nights", style: AppStyles.headLineStyle1.copyWith(
                 color: AppStyles.kakiColor
             ),),
           )
