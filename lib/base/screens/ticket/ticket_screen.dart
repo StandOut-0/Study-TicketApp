@@ -139,6 +139,22 @@ class TicketScreen extends StatelessWidget {
           ),
         ],
         ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          color:AppStyles.ticktWhite,
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(21),
+              bottomLeft: Radius.circular(21)
+          )
+        ),
+        child: Container(
+          child: ClipRRect(
+            borderRadius:BorderRadius.circular(15),
+            child: Center(child: Text("hh")),
+          ),
+        ),
       )
     ],
   ),
