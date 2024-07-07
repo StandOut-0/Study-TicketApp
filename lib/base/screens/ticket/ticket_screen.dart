@@ -141,6 +141,7 @@ class TicketScreen extends StatelessWidget {
         ],
         ),
       ),
+      SizedBox(height: 1),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 16),
         padding: EdgeInsets.symmetric(vertical: 20),
@@ -165,7 +166,12 @@ class TicketScreen extends StatelessWidget {
             ),
           ),
         ),
-      )
+      ),
+
+      SizedBox(height: 20),
+      Container(
+          padding: EdgeInsets.only(left: 16),
+          child: TicketView(ticket: ticketList[0])),
     ],
   ),
     );
