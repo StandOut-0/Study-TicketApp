@@ -43,62 +43,67 @@ class HotelGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Container(
-      margin: wholeScreen == true?EdgeInsets.only(left:16, right:16):EdgeInsets.only(right: 16) ,
-      padding: EdgeInsets.all(8.0),
-      // width: size.width* (wholeScreen == true?1:0.6),
-      height: 350,
-      decoration: BoxDecoration(
-          color: AppStyles.primaryColor,
-          borderRadius: BorderRadius.circular(24)
-      ),
-      child:
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 1.2,
-            child: Container(
-                // height: 180,
-                decoration: BoxDecoration(
-                    color: AppStyles.primaryColor,
-                    borderRadius: BorderRadius.circular(18),
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                            "assets/images/${hotel['image']}"
-                        )
-                    )
-                )
-            ),
-          ),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(hotel['place'], style: AppStyles.headLineStyle2.copyWith(
-                color: AppStyles.kakiColor
-            ),),
-          ),
-          // SizedBox(height: 5),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(hotel['destination'],
-                  style: AppStyles.headLineStyle3.copyWith(
-                      color: Colors.white
-                  ),),
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context, "/hotel_detail");
+      },
+      child: Container(
+        margin: wholeScreen == true?EdgeInsets.only(left:16, right:16):EdgeInsets.only(right: 16) ,
+        padding: EdgeInsets.all(8.0),
+        // width: size.width* (wholeScreen == true?1:0.6),
+        height: 350,
+        decoration: BoxDecoration(
+            color: AppStyles.primaryColor,
+            borderRadius: BorderRadius.circular(24)
+        ),
+        child:
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AspectRatio(
+              aspectRatio: 1.2,
+              child: Container(
+                  // height: 180,
+                  decoration: BoxDecoration(
+                      color: AppStyles.primaryColor,
+                      borderRadius: BorderRadius.circular(18),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                              "assets/images/${hotel['image']}"
+                          )
+                      )
+                  )
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text("\$${hotel['price']}/nights",
-                  style: AppStyles.headLineStyle4.copyWith(
-                      color: AppStyles.kakiColor
-                  ),),
-              )
-            ],
-          )
-        ],
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Text(hotel['place'], style: AppStyles.headLineStyle2.copyWith(
+                  color: AppStyles.kakiColor
+              ),),
+            ),
+            // SizedBox(height: 5),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text(hotel['destination'],
+                    style: AppStyles.headLineStyle3.copyWith(
+                        color: Colors.white
+                    ),),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text("\$${hotel['price']}/nights",
+                    style: AppStyles.headLineStyle4.copyWith(
+                        color: AppStyles.kakiColor
+                    ),),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

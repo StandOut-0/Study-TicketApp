@@ -4,6 +4,7 @@ import 'package:ticket_app/base/screens/all_tickets.dart';
 import 'package:ticket_app/base/screens/ticket/ticket_screen.dart';
 
 import 'base/screens/all_hotels.dart';
+import 'base/screens/ticket/hotel_detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         "/all_tickets":(context) => const AllTickets(),
         "/all_hotels":(context) => const AllHotels(),
         "/ticket_view":(context) => const TicketScreen(),
+        "/hotel_detail":(context) => const HotelDetail(),
       },
     );
   }
