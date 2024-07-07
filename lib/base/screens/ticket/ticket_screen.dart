@@ -1,3 +1,4 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -142,6 +143,7 @@ class TicketScreen extends StatelessWidget {
       ),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           color:AppStyles.ticktWhite,
           borderRadius: BorderRadius.only(
@@ -150,9 +152,17 @@ class TicketScreen extends StatelessWidget {
           )
         ),
         child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: ClipRRect(
             borderRadius:BorderRadius.circular(15),
-            child: Center(child: Text("hh")),
+            child: BarcodeWidget(
+              height: 78,
+              barcode: Barcode.code128(),
+              data: "https://standout.tistory.com/",
+              drawText: false,
+              color: AppStyles.textColor,
+              width: double.infinity,
+            ),
           ),
         ),
       )
